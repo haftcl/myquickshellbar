@@ -60,4 +60,6 @@ QtObject {
             "9": "",
             "default": ""
         })
+
+    readonly property string dateFormat: "MMMM dd HH:mm"
 }
