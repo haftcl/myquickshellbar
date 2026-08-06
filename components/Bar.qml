@@ -61,7 +61,9 @@ PanelWindow {
                 verticalCenter: parent.verticalCenter
             }
 
-            IdleInhibit {}
+            IdleInhibit {
+                anchorPanel: bar
+            }
 
             SysTray {}
         }

@@ -1,8 +1,11 @@
+import Quickshell
 import QtQuick
 import Quickshell.Wayland
 import ".." as App
 
 Item {
+    required property PanelWindow anchorPanel
+
     id: root
     width: App.Theme.iconWidth
     height: App.Theme.barHeight - App.Theme.barPadding
@@ -10,7 +13,7 @@ Item {
 
     IdleInhibitor {
         id: inhibitor
-        window: root.parent.parent
+        window: root.anchorPanel
         enabled: App.State.idleInhibited
     }
 
