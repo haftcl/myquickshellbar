@@ -4,24 +4,25 @@ import QtQuick
 import "../theme"
 
 Rectangle {
-    width: row.implicitWidth + 25
-    height: parent.height
-    radius: Theme.areaRadius
-    anchors.centerIn: parent
-    color: Theme.centerAreaBackground
+    id: root
+    height: Theme.barHeight
+    color: "transparent"
+    implicitWidth: cloklayout.implicitWidth + Theme.iconSpacing
 
     RowLayout {
-        id: row
-        spacing: 5
+        id: cloklayout
         anchors.centerIn: parent
+        spacing: Theme.iconSpacing
 
         Text {
-            text: "\uf017"
+            text: Theme.clockIcon
             font.weight: Font.ExtraBold
             font.family: Theme.fontFamily
-            font.pixelSize: Theme.iconSize
+            font.pixelSize: Theme.fontSize
             color: Theme.fontColor
             Layout.alignment: Qt.AlignVCenter
+            renderType: Text.NativeRendering
+            antialiasing: true
         }
 
         Text {
@@ -29,9 +30,11 @@ Rectangle {
             verticalAlignment: Text.AlignVCenter
             font.weight: Font.ExtraBold
             font.family: Theme.fontFamily
-            font.pointSize: Theme.fontSize
+            font.pixelSize: Theme.fontSize
             color: Theme.fontColor
             Layout.alignment: Qt.AlignVCenter
+            renderType: Text.NativeRendering
+            antialiasing: true
 
             Process {
                 // give the process object an id so we can talk

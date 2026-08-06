@@ -6,6 +6,6 @@ ShellRoot {
     Variants {
         model: Quickshell.screens
 
-        Bar {}
+        Bar { }
     }
 }

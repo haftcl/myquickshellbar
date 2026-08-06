@@ -9,19 +9,14 @@ Rectangle {
 
     color: Theme.systrayBackground
     radius: Theme.areaRadius
-    border.width: 0
-    anchors.verticalCenter: parent.verticalCenter
-    anchors.right: parent.right
-    anchors.rightMargin: 2
-
-    width: layout.implicitWidth + 5
-    height: Theme.barHeight - 2
+    implicitWidth: layout.implicitWidth + Theme.iconSpacing
+    implicitHeight: Theme.barHeight - Theme.barPadding
 
     RowLayout {
         id: layout
 
         anchors.centerIn: parent
-        spacing: 5
+        spacing: Theme.iconSpacing
 
         Repeater {
             // SystemTray.items is a map/list of active StatusNotifierItems
@@ -31,10 +26,10 @@ Rectangle {
                 id: item
                 required property SystemTrayItem modelData
 
-                width: 25
-                height: Theme.barHeight
-                radius: 4
-                color: mouseArea.containsMouse ? Theme.systrayHoverBackground : "transparent"
+                width: Theme.iconWidth
+                implicitHeight: Theme.barHeight - Theme.barPadding
+                radius: Theme.areaRadius
+                color: mouseArea.containsMouse ? Theme.hoverBackground : "transparent"
 
                 // Tray Icon
                 Image {

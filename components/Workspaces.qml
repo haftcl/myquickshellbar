@@ -9,21 +9,13 @@ Rectangle {
 
     required property ShellScreen targetScreen
 
-    anchors {
-        left: parent.left
-        leftMargin: 2
-        verticalCenter: parent.verticalCenter
-    }
-
-    radius: Theme.areaRadius
-    color: Theme.leftAreaBackground
-    height: parent.height
-    width: layout.implicitWidth + 5
+    implicitHeight: parent.height - Theme.barPadding
+    implicitWidth: layout.implicitWidth + Theme.iconSpacing
 
     RowLayout {
         id: layout
         anchors.centerIn: parent
-        spacing: 5
+        spacing: Theme.iconSpacing
 
         Repeater {
             // Filter workspaces for this screen
@@ -38,9 +30,9 @@ Rectangle {
                 required property HyprlandWorkspace modelData
                 property bool isActive: modelData.active
 
-                implicitWidth: 25
-                implicitHeight: Theme.barHeight - 4
-                radius: Theme.workspaceIconRadius
+                implicitWidth: Theme.iconWidth
+                implicitHeight: Theme.barHeight - Theme.barPadding
+                radius: Theme.areaRadius
 
                 // Individual button styling
                 color: isActive
@@ -50,19 +42,25 @@ Rectangle {
                 // Smooth hover transition effect
                 Behavior on color {
                     ColorAnimation {
-                        duration: 120
+                        duration: Theme.animationDuration
                     }
                 }
 
                 Text {
                     anchors.centerIn: parent
-                    text: Theme.iconMap[parent.modelData.name] ?? parent.modelData.name
+                    text: Theme.workspacesIconMap[parent.modelData.name] ?? parent.modelData.name
                     color: parent.isActive || mouseArea.containsMouse ? Theme.activeFontColor : Theme.fontColor
                     font.family: Theme.fontFamily
-                    font.pointSize: Theme.iconMap[parent.modelData.name] ? Theme.iconSize : Theme.fontSize
-                    font.bold: Theme.iconMap[parent.modelData.name] ? false : true
+                    font.pixelSize: Theme.workspacesIconMap[parent.modelData.name] ? Theme.iconSize : Theme.fontSize
+                    font.bold: Theme.workspacesIconMap[parent.modelData.name] ? false : true
                     renderType: Text.NativeRendering
                     font.hintingPreference: Font.PreferFullHinting
+
+                    Behavior on color {
+                        ColorAnimation {
+                            duration: Theme.animationDuration
+                        }
+                    }
                 }
 
                 MouseArea {

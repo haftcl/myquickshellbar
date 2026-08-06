@@ -5,11 +5,14 @@ import QtQuick
 QtObject {
     // Sizes
     readonly property int barHeight: 25
-    readonly property int barRadius: 7
+    readonly property int barRadius: 12
     readonly property int barMarginTop: 3
     readonly property int barMarginBottom: 5
     readonly property int barMarginLeft: 2
     readonly property int barMarginRight: 2
+    readonly property int barPadding: 2
+    readonly property int areaLeftRightPadding: 10
+    readonly property int componentsSpacing: 10
 
     // Backgrounds
     // readonly property color borderColor: "#313244"
@@ -21,22 +24,27 @@ QtObject {
     readonly property color systrayBackground: "#181825"
     readonly property color systrayHoverBackground: "#281825"
 
-    readonly property int workspaceIconRadius: 10
-
     // Font color
     readonly property color fontColor: "#cdd6f4"
     readonly property color hoverFontColor: "#b4befe"
     readonly property color activeFontColor: "#1e1e2e"
 
     readonly property string fontFamily: "Ubuntu Nerd Font Propo"
-    readonly property int fontSize: 10
-    readonly property int iconSize: 11
+    readonly property int fontSize: 12
+    readonly property int iconSize: 15
+    readonly property int iconWidth: 25
+    readonly property int iconSpacing: 5
 
     readonly property color leftAreaBackground: "#313244"
     readonly property color centerAreaBackground: "#313244"
     readonly property color rightAreaBackground: "#313244"
-    readonly property int areaRadius: 10
-    readonly property var iconMap: ({
+    readonly property int areaRadius: 12
+    readonly property int animationDuration: 200
+
+    readonly property string clockIcon: "\uf017"
+    readonly property string idleInhibitorOnIcon: "\udb81\udcb3"
+    readonly property string idleInhibitorOffIcon: "\udb81\udcb2"
+    readonly property var workspacesIconMap: ({
             "1": "󰖟",
             "1ide": "",
             "1job": "",
