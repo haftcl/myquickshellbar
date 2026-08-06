@@ -1,21 +1,21 @@
 import QtQuick.Layouts
 import QtQuick
-import "../theme"
 import Quickshell.Hyprland
 import Quickshell
+import ".." as App
 
 Rectangle {
     id: root
 
     required property ShellScreen targetScreen
 
-    implicitHeight: parent.height - Theme.barPadding
-    implicitWidth: layout.implicitWidth + Theme.iconSpacing
+    implicitHeight: parent.height - App.Theme.barPadding
+    implicitWidth: layout.implicitWidth + App.Theme.iconSpacing
 
     RowLayout {
         id: layout
         anchors.centerIn: parent
-        spacing: Theme.iconSpacing
+        spacing: App.Theme.iconSpacing
 
         Repeater {
             // Filter workspaces for this screen
@@ -30,35 +30,35 @@ Rectangle {
                 required property HyprlandWorkspace modelData
                 property bool isActive: modelData.active
 
-                implicitWidth: Theme.iconWidth
-                implicitHeight: Theme.barHeight - Theme.barPadding
-                radius: Theme.areaRadius
+                implicitWidth: App.Theme.iconWidth
+                implicitHeight: App.Theme.barHeight - App.Theme.barPadding
+                radius: App.Theme.areaRadius
 
                 // Individual button styling
                 color: isActive
-                        ? Theme.accentBackground
-                        : (mouseArea.containsMouse ? Theme.hoverBackground : Theme.workspaceBackground)
+                        ? App.Theme.accentBackground
+                        : (mouseArea.containsMouse ? App.Theme.hoverBackground : App.Theme.workspaceBackground)
 
                 // Smooth hover transition effect
                 Behavior on color {
                     ColorAnimation {
-                        duration: Theme.animationDuration
+                        duration: App.Theme.animationDuration
                     }
                 }
 
                 Text {
                     anchors.centerIn: parent
-                    text: Theme.workspacesIconMap[parent.modelData.name] ?? parent.modelData.name
-                    color: parent.isActive || mouseArea.containsMouse ? Theme.activeFontColor : Theme.fontColor
-                    font.family: Theme.fontFamily
-                    font.pixelSize: Theme.workspacesIconMap[parent.modelData.name] ? Theme.iconSize : Theme.fontSize
-                    font.bold: Theme.workspacesIconMap[parent.modelData.name] ? false : true
+                    text: App.Theme.workspacesIconMap[parent.modelData.name] ?? parent.modelData.name
+                    color: parent.isActive || mouseArea.containsMouse ? App.Theme.activeFontColor : App.Theme.fontColor
+                    font.family: App.Theme.fontFamily
+                    font.pixelSize: App.Theme.workspacesIconMap[parent.modelData.name] ? App.Theme.iconSize : App.Theme.fontSize
+                    font.bold: App.Theme.workspacesIconMap[parent.modelData.name] ? false : true
                     renderType: Text.NativeRendering
                     font.hintingPreference: Font.PreferFullHinting
 
                     Behavior on color {
                         ColorAnimation {
-                            duration: Theme.animationDuration
+                            duration: App.Theme.animationDuration
                         }
                     }
                 }

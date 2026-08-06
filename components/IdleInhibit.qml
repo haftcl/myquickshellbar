@@ -1,40 +1,40 @@
 import QtQuick
 import Quickshell.Wayland
-import "../theme"
+import ".." as App
 
 Item {
     id: root
-    width: Theme.iconWidth
-    height: Theme.barHeight - Theme.barPadding
+    width: App.Theme.iconWidth
+    height: App.Theme.barHeight - App.Theme.barPadding
     visible: true
 
     IdleInhibitor {
         id: inhibitor
         window: root.parent.parent
-        enabled: false
+        enabled: App.State.idleInhibited
     }
 
     Rectangle {
         anchors.fill: parent
-        color: inhibitor.enabled ? Theme.accentBackground : (mouseArea.containsMouse ? Theme.hoverBackground : "transparent")
-        radius: Theme.areaRadius
+        color: inhibitor.enabled ? App.Theme.accentBackground : (mouseArea.containsMouse ? App.Theme.hoverBackground : "transparent")
+        radius: App.Theme.areaRadius
 
         Behavior on color {
             ColorAnimation {
-                duration: Theme.animationDuration
+                duration: App.Theme.animationDuration
             }
         }
 
         // Icon text/symbol (replace with an Image or Icon component if using icon themes)
         Text {
             anchors.centerIn: parent
-            text: inhibitor.enabled ? Theme.idleInhibitorOnIcon : Theme.idleInhibitorOffIcon
-            color: inhibitor.enabled || mouseArea.containsMouse ? Theme.activeFontColor : Theme.fontColor
-            font.pixelSize: Theme.iconSize
+            text: inhibitor.enabled ? App.Theme.idleInhibitorOnIcon : App.Theme.idleInhibitorOffIcon
+            color: inhibitor.enabled || mouseArea.containsMouse ? App.Theme.activeFontColor : App.Theme.fontColor
+            font.pixelSize: App.Theme.iconSize
 
             Behavior on color {
                 ColorAnimation {
-                    duration: Theme.animationDuration
+                    duration: App.Theme.animationDuration
                 }
             }
         }
@@ -46,7 +46,8 @@ Item {
             cursorShape: Qt.PointingHandCursor
 
             onClicked: {
-                inhibitor.enabled = !inhibitor.enabled;
+                App.State.idleInhibited = !App.State.idleInhibited
+                inhibitor.enabled = App.State.idleInhibited
             }
         }
     }

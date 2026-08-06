@@ -2,21 +2,21 @@ import Quickshell
 import Quickshell.Services.SystemTray
 import QtQuick
 import QtQuick.Layouts
-import "../theme"
+import ".." as App
 
 Rectangle {
     id: root
 
-    color: Theme.systrayBackground
-    radius: Theme.areaRadius
-    implicitWidth: layout.implicitWidth + Theme.iconSpacing
-    implicitHeight: Theme.barHeight - Theme.barPadding
+    color: App.Theme.systrayBackground
+    radius: App.Theme.areaRadius
+    implicitWidth: layout.implicitWidth + App.Theme.iconSpacing
+    implicitHeight: App.Theme.barHeight - App.Theme.barPadding
 
     RowLayout {
         id: layout
 
         anchors.centerIn: parent
-        spacing: Theme.iconSpacing
+        spacing: App.Theme.iconSpacing
 
         Repeater {
             // SystemTray.items is a map/list of active StatusNotifierItems
@@ -26,10 +26,10 @@ Rectangle {
                 id: item
                 required property SystemTrayItem modelData
 
-                width: Theme.iconWidth
-                implicitHeight: Theme.barHeight - Theme.barPadding
-                radius: Theme.areaRadius
-                color: mouseArea.containsMouse ? Theme.hoverBackground : "transparent"
+                width: App.Theme.iconWidth
+                implicitHeight: App.Theme.barHeight - App.Theme.barPadding
+                radius: App.Theme.areaRadius
+                color: mouseArea.containsMouse ? App.Theme.hoverBackground : "transparent"
 
                 // Tray Icon
                 Image {
@@ -46,7 +46,7 @@ Rectangle {
                     id: menuAnchor
                     menu: item.modelData.menu
                     anchor.item: item
-                    anchor.margins.top: Theme.barHeight + 5
+                    anchor.margins.top: App.Theme.barHeight + 5
                 }
 
                 MouseArea {

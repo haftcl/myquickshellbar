@@ -1,12 +1,12 @@
 import QtQuick.Layouts
 import QtQuick
-import "../theme"
+import ".." as App
 
 Rectangle {
     id: root
-    radius: Theme.barRadius
-    width: row.implicitWidth + Theme.areaLeftRightPadding
-    height: Theme.barHeight
+    radius: App.Theme.barRadius
+    width: row.implicitWidth + App.Theme.areaLeftRightPadding
+    height: App.Theme.barHeight
 
     // --- KEY CONCEPT ---
     // Making this default aliases any child items declared inside Area { ... }
@@ -15,7 +15,7 @@ Rectangle {
 
     RowLayout {
         id: row
-        spacing: Theme.componentsSpacing
+        spacing: App.Theme.componentsSpacing
         anchors.centerIn: parent
     }
 }

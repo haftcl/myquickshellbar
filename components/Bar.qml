@@ -1,7 +1,6 @@
 import Quickshell
 import QtQuick
-import "components"
-import "theme"
+import ".." as App
 
 PanelWindow {
     id: bar
@@ -17,13 +16,13 @@ PanelWindow {
     screen: modelData
 
     color: "transparent"
-    implicitHeight: Theme.barHeight
+    implicitHeight: App.Theme.barHeight
 
     margins {
-        top: Theme.barMarginTop
-        bottom: Theme.barMarginBottom
-        left: Theme.barMarginLeft
-        right: Theme.barMarginRight
+        top: App.Theme.barMarginTop
+        bottom: App.Theme.barMarginBottom
+        left: App.Theme.barMarginLeft
+        right: App.Theme.barMarginRight
     }
 
     Rectangle {
@@ -32,12 +31,12 @@ PanelWindow {
         implicitWidth: parent.width
         implicitHeight: parent.height
 
-        radius: Theme.barRadius
-        color: Theme.background
-        border.color: Theme.borderColor
+        radius: App.Theme.barRadius
+        color: App.Theme.background
+        border.color: App.Theme.borderColor
 
         Area {
-            color: Theme.leftAreaBackground
+            color: App.Theme.leftAreaBackground
             anchors {
                 left: parent.left
                 verticalCenter: parent.verticalCenter
@@ -49,14 +48,14 @@ PanelWindow {
         }
 
         Area {
-            color: Theme.centerAreaBackground
+            color: App.Theme.centerAreaBackground
             anchors.centerIn: parent
 
             Clock {}
         }
 
         Area {
-            color: Theme.rightAreaBackground
+            color: App.Theme.rightAreaBackground
             anchors {
                 right: parent.right
                 verticalCenter: parent.verticalCenter

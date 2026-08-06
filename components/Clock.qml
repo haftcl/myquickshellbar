@@ -1,12 +1,12 @@
 import QtQuick.Layouts
 import QtQuick
-import "../theme"
+import ".." as App
 
 Rectangle {
     id: root
-    height: Theme.barHeight
+    height: App.Theme.barHeight
     color: "transparent"
-    implicitWidth: cloklayout.implicitWidth + Theme.iconSpacing
+    implicitWidth: cloklayout.implicitWidth + App.Theme.iconSpacing
 
     property string clockText: ""
 
@@ -17,21 +17,21 @@ Rectangle {
         repeat: true
         triggeredOnStart: true
         onTriggered: {
-            root.clockText = Qt.formatDateTime(new Date(), Theme.dateFormat);
+            root.clockText = Qt.formatDateTime(new Date(), App.Theme.dateFormat);
         }
     }
 
     RowLayout {
         id: cloklayout
         anchors.centerIn: parent
-        spacing: Theme.iconSpacing
+        spacing: App.Theme.iconSpacing
 
         Text {
-            text: Theme.clockIcon
+            text: App.Theme.clockIcon
             font.weight: Font.ExtraBold
-            font.family: Theme.fontFamily
-            font.pixelSize: Theme.fontSize
-            color: Theme.fontColor
+            font.family: App.Theme.fontFamily
+            font.pixelSize: App.Theme.fontSize
+            color: App.Theme.fontColor
             Layout.alignment: Qt.AlignVCenter
             renderType: Text.NativeRendering
             antialiasing: true
@@ -42,9 +42,9 @@ Rectangle {
             id: clock
             verticalAlignment: Text.AlignVCenter
             font.weight: Font.ExtraBold
-            font.family: Theme.fontFamily
-            font.pixelSize: Theme.fontSize
-            color: Theme.fontColor
+            font.family: App.Theme.fontFamily
+            font.pixelSize: App.Theme.fontSize
+            color: App.Theme.fontColor
             Layout.alignment: Qt.AlignVCenter
             renderType: Text.NativeRendering
             antialiasing: true
