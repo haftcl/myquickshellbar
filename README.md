@@ -6,6 +6,7 @@
   - 3 Areas para posicionar componentes
   - Archivo de Tema para modificar la barra en base a configuraciones.
   - Varios componentes
-    - Workspaces
-    - Reloj
+    - Hyperland Workspaces
+    - IdleInhibitor
+    - Clock
     - System Tray
