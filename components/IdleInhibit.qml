@@ -3,7 +3,7 @@ import QtQuick
 import Quickshell.Wayland
 import ".." as App
 
-Widget {
+BarComponent {
     required property PanelWindow anchorPanel
 
     id: root

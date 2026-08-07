@@ -4,7 +4,7 @@ import QtQuick
 import QtQuick.Layouts
 import ".." as App
 
-Widget {
+BarComponent {
     id: root
 
     color: App.Theme.systrayBackground

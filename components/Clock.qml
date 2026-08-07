@@ -2,7 +2,7 @@ import QtQuick.Layouts
 import QtQuick
 import ".." as App
 
-Widget {
+BarComponent {
     id: root
     implicitWidth: layout.implicitWidth + (App.Theme.componentPadding * 2)
 

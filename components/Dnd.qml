@@ -2,7 +2,7 @@ import QtQuick
 import ".." as App
 import "../services" as Services
 
-Widget {
+BarComponent {
     id: root
 
     implicitWidth: App.Theme.iconWidth

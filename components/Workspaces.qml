@@ -4,7 +4,7 @@ import Quickshell.Hyprland
 import Quickshell
 import ".." as App
 
-Widget {
+BarComponent {
     id: root
 
     required property ShellScreen targetScreen

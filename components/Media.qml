@@ -5,7 +5,7 @@ import Quickshell.Services.Mpris
 import QtQuick.Layouts
 import ".." as App
 
-Widget {
+BarComponent {
     id: root
 
     implicitWidth: layout.implicitWidth + (App.Theme.componentPadding * 2)
