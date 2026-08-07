@@ -2,10 +2,8 @@ import QtQuick.Layouts
 import QtQuick
 import ".." as App
 
-Rectangle {
+Widget {
     id: root
-    color: "transparent"
-    implicitHeight: App.Theme.barHeight
     implicitWidth: layout.implicitWidth + (App.Theme.componentPadding * 2)
 
     property string clockText: ""
@@ -29,7 +27,6 @@ Rectangle {
         BarIcon {
             text: App.Theme.clockIcon
             font.weight: Font.ExtraBold
-            Layout.alignment: Qt.AlignVCenter
         }
 
         BarText {
@@ -37,7 +34,6 @@ Rectangle {
             text: root.clockText
             verticalAlignment: Text.AlignVCenter
             font.weight: Font.ExtraBold
-            Layout.alignment: Qt.AlignVCenter
         }
     }
 }

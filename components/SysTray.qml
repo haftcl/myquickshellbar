@@ -4,13 +4,11 @@ import QtQuick
 import QtQuick.Layouts
 import ".." as App
 
-Rectangle {
+Widget {
     id: root
 
     color: App.Theme.systrayBackground
-    radius: App.Theme.areaRadius
     implicitWidth: layout.implicitWidth + (App.Theme.componentPadding * 2)
-    implicitHeight: App.Theme.barHeight - (App.Theme.barPadding * 2)
 
     RowLayout {
         id: layout

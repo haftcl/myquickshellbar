@@ -5,8 +5,13 @@ import Quickshell.Services.Mpris
 import QtQuick.Layouts
 import ".." as App
 
-Rectangle {
+Widget {
     id: root
+
+    implicitWidth: layout.implicitWidth + (App.Theme.componentPadding * 2)
+
+    visible: isVisible
+    color: App.Theme.mediaBackground
 
     readonly property var player: {
         let players = Mpris.players.values;
@@ -46,13 +51,6 @@ Rectangle {
 
         return true;
     }
-
-    implicitHeight: App.Theme.barHeight - (App.Theme.barPadding * 2)
-    implicitWidth: layout.implicitWidth + (App.Theme.componentPadding * 2)
-
-    visible: isVisible
-    color: App.Theme.mediaBackground
-    radius: App.Theme.areaRadius
 
     RowLayout {
         id: layout

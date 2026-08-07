@@ -3,11 +3,11 @@ import QtQuick
 import Quickshell.Wayland
 import ".." as App
 
-Item {
+Widget {
     required property PanelWindow anchorPanel
+
     id: root
-    width: App.Theme.iconWidth
-    height: App.Theme.barHeight - App.Theme.barPadding
+    implicitWidth: App.Theme.iconWidth
 
     IdleInhibitor {
         id: inhibitor

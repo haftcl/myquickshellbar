@@ -4,14 +4,12 @@ import Quickshell.Hyprland
 import Quickshell
 import ".." as App
 
-Rectangle {
+Widget {
     id: root
 
     required property ShellScreen targetScreen
 
-    implicitHeight: App.Theme.barHeight - App.Theme.barPadding
     implicitWidth: layout.implicitWidth + App.Theme.iconSpacing
-    color: "transparent"
 
     RowLayout {
         id: layout

@@ -5,8 +5,8 @@ import ".." as App
 Rectangle {
     id: root
     radius: App.Theme.barRadius
-    width: row.implicitWidth + App.Theme.areaLeftRightPadding
-    height: App.Theme.barHeight
+    implicitWidth: row.implicitWidth + App.Theme.areaLeftRightPadding
+    implicitHeight: App.Theme.barHeight
 
     // --- KEY CONCEPT ---
     // Making this default aliases any child items declared inside Area { ... }

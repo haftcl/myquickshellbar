@@ -36,6 +36,7 @@ PanelWindow {
         border.color: App.Theme.borderColor
 
         Area {
+            id: leftArea
             color: App.Theme.leftAreaBackground
             anchors {
                 left: parent.left
@@ -44,32 +45,44 @@ PanelWindow {
 
             Workspaces {
                 targetScreen: bar.screen
+                area: leftArea
             }
 
-            Media {}
+            Media {
+                area: leftArea
+            }
         }
 
         Area {
+            id: centerArea
             color: App.Theme.centerAreaBackground
             anchors.centerIn: parent
 
-            Clock {}
+            Clock {
+                area: centerArea
+            }
         }
 
         Area {
+            id: rightArea
             color: App.Theme.rightAreaBackground
             anchors {
                 right: parent.right
                 verticalCenter: parent.verticalCenter
             }
 
-            Dnd {}
+            Dnd {
+                area: rightArea
+            }
 
             IdleInhibit {
+                area: rightArea
                 anchorPanel: bar
             }
 
-            SysTray {}
+            SysTray {
+                area: rightArea
+            }
         }
     }
 }

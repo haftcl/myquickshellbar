@@ -2,11 +2,10 @@ import QtQuick
 import ".." as App
 import "../services" as Services
 
-Item {
+Widget {
     id: root
 
-    width: App.Theme.iconWidth
-    height: App.Theme.barHeight - App.Theme.barPadding
+    implicitWidth: App.Theme.iconWidth
 
     Rectangle {
         anchors.fill: parent
