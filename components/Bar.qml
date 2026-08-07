@@ -80,6 +80,14 @@ PanelWindow {
                 anchorPanel: bar
             }
 
+            Mic {
+                area: rightArea
+            }
+
+            Audio {
+                area: rightArea
+            }
+
             SysTray {
                 area: rightArea
             }

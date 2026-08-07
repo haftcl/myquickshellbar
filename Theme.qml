@@ -17,7 +17,6 @@ QtObject {
     readonly property int mediaMaxWidth: 285
 
     // Backgrounds
-    // readonly property color borderColor: "#313244"
     readonly property color borderColor: "transparent"
     readonly property color background: "transparent"
     readonly property color accentBackground: "#89b4fa"
@@ -45,14 +44,18 @@ QtObject {
     readonly property int animationDuration: 200
 
 
-    readonly property string playIcon: "\uf04b"
-    readonly property string pauseIcon: "\uf04c"
-    readonly property string stopIcon: "\uf04d"
-    readonly property string clockIcon: "\uf017"
+    readonly property string volumeIcon: ""
+    readonly property string muteIcon: "󰖁"
+    readonly property string volumeMicIcon: ""
+    readonly property string muteMicIcon: ""
+    readonly property string playIcon: ""
+    readonly property string pauseIcon: ""
+    readonly property string stopIcon: ""
+    readonly property string clockIcon: ""
     readonly property string dndOnIcon: ""
     readonly property string dndOffIcon: "󰵙"
-    readonly property string idleInhibitorOnIcon: "\udb81\udcb3"
-    readonly property string idleInhibitorOffIcon: "\udb81\udcb2"
+    readonly property string idleInhibitorOnIcon: "󰒳"
+    readonly property string idleInhibitorOffIcon: "󰒲"
     readonly property var workspacesIconMap: ({
             "1": "󰖟",
             "1ide": "",

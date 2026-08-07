@@ -4,7 +4,6 @@ import "../services" as Services
 
 BarComponent {
     id: root
-
     implicitWidth: App.Theme.iconWidth
 
     Rectangle {
