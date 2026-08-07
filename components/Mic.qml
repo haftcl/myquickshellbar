@@ -13,7 +13,7 @@ BarComponent {
         anchors.centerIn: parent
 
         BarIcon {
-            text: Services.AudioService.input.audio.muted ? App.Theme.muteMicIcon : App.Theme.volumeMicIcon
+            text: Services.AudioService.input?.audio?.muted ? App.Theme.muteMicIcon : App.Theme.volumeMicIcon
         }
 
         BarText {

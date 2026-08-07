@@ -33,7 +33,7 @@ QtObject {
 
     readonly property string fontFamily: "Ubuntu Nerd Font Propo"
     readonly property int fontSize: 12
-    readonly property int iconSize: 13
+    readonly property int iconSize: 15
     readonly property int iconWidth: 25
     readonly property int iconSpacing: 5
 
@@ -44,6 +44,9 @@ QtObject {
     readonly property int animationDuration: 200
 
 
+    readonly property string powerProfilePerformanceIcon: "󱐋"
+    readonly property string powerProfileBalancedIcon: "󰾅"
+    readonly property string powerProfilePowerSaverIcon: "󰂎"
     readonly property string volumeIcon: ""
     readonly property string muteIcon: "󰖁"
     readonly property string volumeMicIcon: ""

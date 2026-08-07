@@ -71,6 +71,10 @@ PanelWindow {
                 verticalCenter: parent.verticalCenter
             }
 
+            PowerProfile {
+                area: rightArea
+            }
+
             Dnd {
                 area: rightArea
             }

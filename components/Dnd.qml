@@ -8,7 +8,7 @@ BarComponent {
 
     Rectangle {
         anchors.fill: parent
-        color: Services.DndService.enabled ? App.Theme.accentBackground : (mouseArea.containsMouse ? App.Theme.hoverBackground : "transparent")
+        color: Services.DndService.dndEnabled ? App.Theme.accentBackground : (mouseArea.containsMouse ? App.Theme.hoverBackground : "transparent")
         radius: App.Theme.areaRadius
 
         Behavior on color {
@@ -19,8 +19,8 @@ BarComponent {
 
         BarIcon {
             anchors.centerIn: parent
-            text: Services.DndService.enabled ? App.Theme.dndOnIcon : App.Theme.dndOffIcon
-            color: Services.DndService.enabled || mouseArea.containsMouse ? App.Theme.activeFontColor : App.Theme.fontColor
+            text: Services.DndService.dndEnabled ? App.Theme.dndOnIcon : App.Theme.dndOffIcon
+            color: Services.DndService.dndEnabled || mouseArea.containsMouse ? App.Theme.activeFontColor : App.Theme.fontColor
         }
 
         MouseArea {
@@ -29,15 +29,7 @@ BarComponent {
             hoverEnabled: true
             cursorShape: Qt.PointingHandCursor
 
-            onClicked: Services.DndService.toggleMode()
-        }
-
-        Timer {
-            interval: 2000
-            running: true
-            repeat: true
-
-            onTriggered: Services.DndService.refresh()
+            onClicked: Services.DndService.toggleDndMode()
         }
     }
 }

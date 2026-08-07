@@ -9,6 +9,5 @@ Text {
     font {
         family: App.Theme.fontFamily
         pixelSize: App.Theme.iconSize
-        weight: Font.Medium
     }
 }

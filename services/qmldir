@@ -1,2 +1,3 @@
 singleton DndService DndService.qml
 singleton AudioService AudioService.qml
+singleton PowerProfileService PowerProfileService.qml

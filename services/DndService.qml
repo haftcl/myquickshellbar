@@ -6,16 +6,24 @@ import Quickshell.Io
 QtObject {
     id: root
 
-    property bool enabled: false
+    property bool dndEnabled: false
 
     property Process query: Process {
         command: ["makoctl", "mode"]
 
         stdout: StdioCollector {
             onStreamFinished: {
-                root.enabled = text.includes("dnd")
+                root.dndEnabled = text.includes("dnd")
             }
         }
+    }
+
+    property Timer dndTimer: Timer {
+        interval: 2000
+        running: true
+        repeat: true
+
+        onTriggered: root.refreshDndStatus()
     }
 
     property Process toggle: Process {
@@ -23,14 +31,14 @@ QtObject {
 
     }
 
-    function refresh() {
+    function refreshDndStatus() {
         if (query.running)
             return
 
         query.running = true
     }
 
-    function toggleMode() {
+    function toggleDndMode() {
         if (toggle.running)
             return
 
@@ -38,6 +46,6 @@ QtObject {
     }
 
     Component.onCompleted: {
-        refresh()
+        refreshDndStatus()
     }
 }

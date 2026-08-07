@@ -18,11 +18,11 @@ QtObject {
 
     // Outputs
     function outputVolume() {
-        if (output.audio.muted) {
+        if (output?.audio?.muted) {
             return "--%";
         }
 
-        return String(Math.round(output.audio.volume * 100)).padStart(2, "0") + "%";
+        return String(Math.round(output?.audio?.volume * 100)).padStart(2, "0") + "%";
     }
 
     function volumeUp(step = 0.05) {
@@ -39,11 +39,11 @@ QtObject {
 
     // Inputs
     function micVolume() {
-        if (input.audio.muted) {
+        if (input?.audio?.muted) {
             return "--%";
         }
 
-        return String(Math.round(input.audio.volume * 100)).padStart(2, "0") + "%";
+        return String(Math.round(input?.audio?.volume * 100)).padStart(2, "0") + "%";
     }
 
     function toggleMicMute() {
