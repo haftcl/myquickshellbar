@@ -72,21 +72,9 @@ Rectangle {
             wrapMode: Text.NoWrap
         }
 
-        Rectangle {
-            implicitHeight: App.Theme.barHeight - App.Theme.barMarginTop
-            implicitWidth: App.Theme.iconWidth
-            color: "transparent"
-
-            BarIcon {
-                anchors.centerIn: parent
-                text: root.statusIcon
-            }
+        BarIcon {
+            text: root.statusIcon
+            font.pixelSize: App.Theme.fontSize
         }
-    }
-
-    Component.onCompleted: {
-        console.log(`Identity: ${player.identity}`);
-        console.log(`Entry: ${player.desktopEntry}`);
-        console.log(`Entry: ${player.iconPath}`);
     }
 }
