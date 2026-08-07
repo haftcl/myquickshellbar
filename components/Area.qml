@@ -15,7 +15,7 @@ Rectangle {
 
     RowLayout {
         id: row
-        spacing: App.Theme.componentsSpacing
+        spacing: App.Theme.componentSpacing
         anchors.centerIn: parent
     }
 }

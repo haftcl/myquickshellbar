@@ -4,9 +4,9 @@ import ".." as App
 
 Rectangle {
     id: root
-    height: App.Theme.barHeight
     color: "transparent"
-    implicitWidth: cloklayout.implicitWidth + App.Theme.iconSpacing
+    implicitHeight: App.Theme.barHeight
+    implicitWidth: layout.implicitWidth + (App.Theme.componentPadding * 2)
 
     property string clockText: ""
 
@@ -22,7 +22,7 @@ Rectangle {
     }
 
     RowLayout {
-        id: cloklayout
+        id: layout
         anchors.centerIn: parent
         spacing: App.Theme.iconSpacing
 

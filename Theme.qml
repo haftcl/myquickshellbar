@@ -12,7 +12,8 @@ QtObject {
     readonly property int barMarginRight: 2
     readonly property int barPadding: 2
     readonly property int areaLeftRightPadding: 20
-    readonly property int componentsSpacing: 10
+    readonly property int componentSpacing: 10
+    readonly property int componentPadding: 15
     readonly property int mediaMaxWidth: 285
 
     // Backgrounds
@@ -22,9 +23,9 @@ QtObject {
     readonly property color accentBackground: "#89b4fa"
     readonly property color hoverBackground: "#b4befe"
     readonly property color workspaceBackground: "transparent"
-    readonly property color systrayBackground: "#6D5DC8"
+    readonly property color systrayBackground: "#000000"
     readonly property color systrayHoverBackground: "#281825"
-    readonly property color mediaBackground: "transparent"
+    readonly property color mediaBackground: "#000000"
 
     // Font color
     readonly property color fontColor: "#cdd6f4"
@@ -48,6 +49,8 @@ QtObject {
     readonly property string pauseIcon: "\uf04c"
     readonly property string stopIcon: "\uf04d"
     readonly property string clockIcon: "\uf017"
+    readonly property string dndOnIcon: ""
+    readonly property string dndOffIcon: "󰵙"
     readonly property string idleInhibitorOnIcon: "\udb81\udcb3"
     readonly property string idleInhibitorOffIcon: "\udb81\udcb2"
     readonly property var workspacesIconMap: ({

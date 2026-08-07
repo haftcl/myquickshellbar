@@ -47,8 +47,8 @@ Rectangle {
         return true;
     }
 
-    implicitHeight: App.Theme.barHeight - App.Theme.barPadding
-    implicitWidth: layout.implicitWidth + App.Theme.componentsSpacing
+    implicitHeight: App.Theme.barHeight - (App.Theme.barPadding * 2)
+    implicitWidth: layout.implicitWidth + (App.Theme.componentPadding * 2)
 
     visible: isVisible
     color: App.Theme.mediaBackground

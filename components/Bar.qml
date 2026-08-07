@@ -63,6 +63,8 @@ PanelWindow {
                 verticalCenter: parent.verticalCenter
             }
 
+            Dnd {}
+
             IdleInhibit {
                 anchorPanel: bar
             }
