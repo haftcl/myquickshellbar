@@ -5,11 +5,9 @@ import ".." as App
 
 Item {
     required property PanelWindow anchorPanel
-
     id: root
     width: App.Theme.iconWidth
     height: App.Theme.barHeight - App.Theme.barPadding
-    visible: true
 
     IdleInhibitor {
         id: inhibitor
@@ -29,17 +27,10 @@ Item {
         }
 
         // Icon text/symbol (replace with an Image or Icon component if using icon themes)
-        Text {
+        BarIcon {
             anchors.centerIn: parent
             text: inhibitor.enabled ? App.Theme.idleInhibitorOnIcon : App.Theme.idleInhibitorOffIcon
             color: inhibitor.enabled || mouseArea.containsMouse ? App.Theme.activeFontColor : App.Theme.fontColor
-            font.pixelSize: App.Theme.iconSize
-
-            Behavior on color {
-                ColorAnimation {
-                    duration: App.Theme.animationDuration
-                }
-            }
         }
 
         MouseArea {
@@ -49,8 +40,8 @@ Item {
             cursorShape: Qt.PointingHandCursor
 
             onClicked: {
-                App.State.idleInhibited = !App.State.idleInhibited
-                inhibitor.enabled = App.State.idleInhibited
+                App.State.idleInhibited = !App.State.idleInhibited;
+                inhibitor.enabled = App.State.idleInhibited;
             }
         }
     }

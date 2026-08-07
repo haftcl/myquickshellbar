@@ -45,6 +45,8 @@ PanelWindow {
             Workspaces {
                 targetScreen: bar.screen
             }
+
+            Media {}
         }
 
         Area {

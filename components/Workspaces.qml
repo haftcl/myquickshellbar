@@ -9,8 +9,9 @@ Rectangle {
 
     required property ShellScreen targetScreen
 
-    implicitHeight: parent.height - App.Theme.barPadding
+    implicitHeight: App.Theme.barHeight - App.Theme.barPadding
     implicitWidth: layout.implicitWidth + App.Theme.iconSpacing
+    color: "transparent"
 
     RowLayout {
         id: layout
@@ -46,21 +47,12 @@ Rectangle {
                     }
                 }
 
-                Text {
+                BarText {
                     anchors.centerIn: parent
                     text: App.Theme.workspacesIconMap[parent.modelData.name] ?? parent.modelData.name
                     color: parent.isActive || mouseArea.containsMouse ? App.Theme.activeFontColor : App.Theme.fontColor
-                    font.family: App.Theme.fontFamily
                     font.pixelSize: App.Theme.workspacesIconMap[parent.modelData.name] ? App.Theme.iconSize : App.Theme.fontSize
                     font.bold: App.Theme.workspacesIconMap[parent.modelData.name] ? false : true
-                    renderType: Text.NativeRendering
-                    font.hintingPreference: Font.PreferFullHinting
-
-                    Behavior on color {
-                        ColorAnimation {
-                            duration: App.Theme.animationDuration
-                        }
-                    }
                 }
 
                 MouseArea {

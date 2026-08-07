@@ -26,28 +26,18 @@ Rectangle {
         anchors.centerIn: parent
         spacing: App.Theme.iconSpacing
 
-        Text {
+        BarIcon {
             text: App.Theme.clockIcon
             font.weight: Font.ExtraBold
-            font.family: App.Theme.fontFamily
-            font.pixelSize: App.Theme.fontSize
-            color: App.Theme.fontColor
             Layout.alignment: Qt.AlignVCenter
-            renderType: Text.NativeRendering
-            antialiasing: true
         }
 
-        Text {
-            text: root.clockText
+        BarText {
             id: clock
+            text: root.clockText
             verticalAlignment: Text.AlignVCenter
             font.weight: Font.ExtraBold
-            font.family: App.Theme.fontFamily
-            font.pixelSize: App.Theme.fontSize
-            color: App.Theme.fontColor
             Layout.alignment: Qt.AlignVCenter
-            renderType: Text.NativeRendering
-            antialiasing: true
         }
     }
 }
