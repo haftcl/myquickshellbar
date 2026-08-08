@@ -7,17 +7,35 @@ BarComponent {
     id: root
     implicitWidth: layout.implicitWidth + App.Theme.barPadding
 
+    function volumeIcon() {
+        var volume = Services.AudioService.outputVolume()
+
+        if (Services.AudioService.outputMuted() || volume == 0) {
+            return App.Theme.muteIcon;
+        }
+
+        if (volume > 60) {
+            return App.Theme.volumeHighIcon
+        }
+
+        if (volume > 30) {
+            return App.Theme.volumeIcon
+        }
+
+        return App.Theme.volumeLowIcon
+    }
+
     RowLayout {
         id: layout
         spacing: App.Theme.iconSpacing
         anchors.centerIn: parent
 
         BarIcon {
-            text: Services.AudioService.output?.audio?.muted ? App.Theme.muteIcon : App.Theme.volumeIcon
+            text: root.volumeIcon()
         }
 
         BarText {
-            text: Services.AudioService.outputVolume()
+            text: Services.AudioService.outputVolumeStyled()
             font.bold: true
         }
     }

@@ -17,12 +17,20 @@ QtObject {
     }
 
     // Outputs
-    function outputVolume() {
-        if (output?.audio?.muted) {
+    function outputMuted() {
+        return Boolean(output?.audio?.muted)
+    }
+
+    function outputVolumeStyled() {
+        if (outputMuted()) {
             return "--%";
         }
 
-        return String(Math.round(output?.audio?.volume * 100)).padStart(2, "0") + "%";
+        return String(outputVolume()).padStart(2, "0") + "%";
+    }
+
+    function outputVolume() {
+        return Math.round((output?.audio?.volume ?? 0) * 100)
     }
 
     function volumeUp(step = 0.05) {

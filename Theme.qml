@@ -50,6 +50,8 @@ QtObject {
     readonly property string powerProfilePerformanceIcon: "󱐋"
     readonly property string powerProfileBalancedIcon: "󰾅"
     readonly property string powerProfilePowerSaverIcon: "󰂎"
+    readonly property string volumeHighIcon: ""
+    readonly property string volumeLowIcon: ""
     readonly property string volumeIcon: ""
     readonly property string muteIcon: "󰖁"
     readonly property string volumeMicIcon: ""
