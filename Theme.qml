@@ -44,6 +44,9 @@ QtObject {
     readonly property int animationDuration: 200
 
 
+    readonly property string backlightFullIcon: "󰃠"
+    readonly property string backlightMediumIcon: "󰃟"
+    readonly property string backlightLowIcon: "󰃞"
     readonly property string powerProfilePerformanceIcon: "󱐋"
     readonly property string powerProfileBalancedIcon: "󰾅"
     readonly property string powerProfilePowerSaverIcon: "󰂎"

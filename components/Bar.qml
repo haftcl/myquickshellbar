@@ -84,6 +84,10 @@ PanelWindow {
                 anchorPanel: bar
             }
 
+            Backlight {
+                area: rightArea
+            }
+
             Mic {
                 area: rightArea
             }
