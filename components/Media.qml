@@ -42,6 +42,14 @@ BarComponent {
         }
     }
 
+    function isPlaying() {
+        return player?.playbackState === MprisPlaybackState.Playing;
+    }
+
+    function isSpotify() {
+        return player?.identity === 'Spotify'
+    }
+
     property bool isVisible: {
         if (player == null)
             return false;
@@ -73,6 +81,12 @@ BarComponent {
         BarIcon {
             text: root.statusIcon
             font.pixelSize: App.Theme.fontSize
+            visible: !root.isSpotify()
+        }
+
+        Equalizer {
+            playing: root.isPlaying()
+            visible: root.isSpotify()
         }
     }
 }
