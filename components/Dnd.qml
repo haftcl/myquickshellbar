@@ -4,15 +4,9 @@ import "../services" as Services
 
 BarComponent {
     id: root
-    implicitWidth: App.Theme.iconWidth
-    color: Services.DndService.dndEnabled ? App.Theme.accentBackground : (mouseArea.containsMouse ? App.Theme.hoverBackground : "transparent")
-    radius: App.Theme.areaRadius
-
-    Behavior on color {
-        ColorAnimation {
-            duration: App.Theme.animationDuration
-        }
-    }
+    width: height
+    color: Services.DndService.dndEnabled ? App.Theme.accentBackground : (mouseArea.containsMouse ? App.Theme.hoverBackground :App.Theme.iconBackground)
+    radius: App.Theme.iconRadius
 
     BarIcon {
         anchors.centerIn: parent

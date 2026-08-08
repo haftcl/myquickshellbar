@@ -12,8 +12,8 @@ QtObject {
     readonly property int barPadding: 2
     readonly property int barMarginTop: 3
     readonly property int barMarginBottom: 5
-    readonly property int barMarginLeft: 0
-    readonly property int barMarginRight: 0
+    readonly property int barMarginLeft: 3
+    readonly property int barMarginRight: 3
     readonly property int areaLeftRightPadding: 10
     readonly property int componentSpacing: 5
     readonly property int componentPadding: 10
@@ -22,6 +22,7 @@ QtObject {
     // Radius
     readonly property int barRadius: 7
     readonly property int areaRadius: 10
+    readonly property int iconRadius: 20
 
     // Animations
     readonly property int animationDuration: 200
@@ -34,7 +35,7 @@ QtObject {
     readonly property color activeFontColor: "#181926"
 
     // Colors
-    readonly property color background: "transparent"
+    readonly property color background: "#313244"
     readonly property color borderColor: "transparent"
     readonly property color accentBackground: "#89b4fa"
     readonly property color hoverBackground: "#8839ef"
@@ -48,6 +49,8 @@ QtObject {
     readonly property color equalizerColor: "#34DB70"
     readonly property color audioBackground: "#000000"
     readonly property color micBackground: "#000000"
+    readonly property color iconBackground: "#000000"
+    readonly property color clockBackground: "transparent"
 
     // Icons
     readonly property string backlightFullIcon: "󰃠"

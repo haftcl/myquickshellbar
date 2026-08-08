@@ -6,24 +6,24 @@ import ".." as App
 BarComponent {
     id: root
     implicitWidth: calculateWidth(layout.implicitWidth)
-    color: App.Theme.audioBackground
+    color: mouseArea.containsMouse ? App.Theme.hoverBackground : App.Theme.audioBackground
 
     function volumeIcon() {
-        var volume = Services.AudioService.outputVolume()
+        var volume = Services.AudioService.outputVolume();
 
         if (Services.AudioService.outputMuted() || volume == 0) {
             return App.Theme.muteIcon;
         }
 
         if (volume > 60) {
-            return App.Theme.volumeHighIcon
+            return App.Theme.volumeHighIcon;
         }
 
         if (volume > 30) {
-            return App.Theme.volumeIcon
+            return App.Theme.volumeIcon;
         }
 
-        return App.Theme.volumeLowIcon
+        return App.Theme.volumeLowIcon;
     }
 
     RowLayout {
@@ -45,6 +45,8 @@ BarComponent {
         id: mouseArea
         acceptedButtons: Qt.LeftButton | Qt.MiddleButton
         anchors.fill: parent
+        hoverEnabled: true
+        cursorShape: Qt.PointingHandCursor
 
         onClicked: mouse => {
             Services.AudioService.toggleMute();

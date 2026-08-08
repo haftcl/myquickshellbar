@@ -6,7 +6,7 @@ import ".." as App
 BarComponent {
     id: root
     implicitWidth: calculateWidth(layout.implicitWidth)
-    color: App.Theme.micBackground
+    color: mouseArea.containsMouse ? App.Theme.hoverBackground : App.Theme.micBackground
 
     RowLayout {
         id: layout
@@ -27,6 +27,8 @@ BarComponent {
         id: mouseArea
         acceptedButtons: Qt.LeftButton | Qt.MiddleButton
         anchors.fill: parent
+        hoverEnabled: true
+        cursorShape: Qt.PointingHandCursor
 
         onClicked: mouse => {
             Services.AudioService.toggleMicMute();

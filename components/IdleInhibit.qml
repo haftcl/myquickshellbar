@@ -4,23 +4,16 @@ import Quickshell.Wayland
 import ".." as App
 
 BarComponent {
-    property PanelWindow anchorPanel: area.panel
-
     id: root
-    implicitWidth: App.Theme.iconWidth
-    color: inhibitor.enabled ? App.Theme.accentBackground : (mouseArea.containsMouse ? App.Theme.hoverBackground : "transparent")
-    radius: App.Theme.areaRadius
+    property PanelWindow anchorPanel: area.panel
+    color: inhibitor.enabled ? App.Theme.accentBackground : (mouseArea.containsMouse ? App.Theme.hoverBackground : App.Theme.iconBackground)
+    width: height
+    radius: App.Theme.iconRadius
 
     IdleInhibitor {
         id: inhibitor
         window: root.anchorPanel
         enabled: App.State.idleInhibited
-    }
-
-    Behavior on color {
-        ColorAnimation {
-            duration: App.Theme.animationDuration
-        }
     }
 
     BarIcon {
