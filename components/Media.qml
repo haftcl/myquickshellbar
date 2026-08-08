@@ -47,7 +47,7 @@ BarComponent {
     }
 
     function isSpotify() {
-        return player?.identity === 'Spotify'
+        return player?.identity === 'Spotify';
     }
 
     property bool isVisible: {
@@ -87,6 +87,11 @@ BarComponent {
         Equalizer {
             playing: root.isPlaying()
             visible: root.isSpotify() && root.isPlaying()
+            barColor: "#34DB70"
         }
+    }
+
+    Component.onCompleted: {
+        console.log(player)
     }
 }

@@ -8,12 +8,12 @@ QtObject {
     readonly property int barRadius: 7
     readonly property int barMarginTop: 3
     readonly property int barMarginBottom: 5
-    readonly property int barMarginLeft: 2
-    readonly property int barMarginRight: 2
-    readonly property int barPadding: 2
-    readonly property int areaLeftRightPadding: 20
+    readonly property int barMarginLeft: 0
+    readonly property int barMarginRight: 0
+    readonly property int barPadding: 1
+    readonly property int areaLeftRightPadding: 10
     readonly property int componentSpacing: 10
-    readonly property int componentPadding: 15
+    readonly property int componentPadding: 10
     readonly property int mediaMaxWidth: 285
 
     // Backgrounds

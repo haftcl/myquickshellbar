@@ -11,9 +11,10 @@ Row {
     // Appearance
     property int bars: 5
     property int barWidth: 2
-    property int barSpacing: 3
+    property int barSpacing: 2
     property int minHeight: 4
     property int maxHeight: 12
+    property color barColor: App.Theme.fontColor
 
     // Animation
     property int duration: 300
@@ -39,7 +40,7 @@ Row {
             radius: root.radius
 
             anchors.bottom: parent.bottom
-            color: App.Theme.fontColor
+            color: root.barColor
 
             SequentialAnimation on height {
                 running: root.playing
