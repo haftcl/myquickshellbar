@@ -7,6 +7,7 @@ import ".." as App
 BarComponent {
     id: root
     implicitWidth: calculateWidth(layout.implicitWidth)
+    color: App.Theme.workspaceBackground
 
     property ShellScreen targetScreen: area.panel.screen
 

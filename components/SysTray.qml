@@ -1,3 +1,5 @@
+pragma ComponentBehavior: Bound
+
 import Quickshell
 import Quickshell.Services.SystemTray
 import QtQuick
@@ -24,7 +26,7 @@ BarComponent {
                 id: item
                 required property SystemTrayItem modelData
 
-                width: App.Theme.iconWidth
+                width: root.calculateHeight(root.height)
                 implicitHeight: root.calculateHeight(root.height)
                 radius: App.Theme.areaRadius
                 color: mouseArea.containsMouse ? App.Theme.systrayHoverBackground : "transparent"
@@ -33,7 +35,7 @@ BarComponent {
                 Image {
                     anchors.centerIn: parent
                     width: root.calculateHeight(item.height)
-                    height:  root.calculateHeight(item.height)
+                    height: root.calculateHeight(item.height)
 
                     source: parent.modelData.icon
                     smooth: true

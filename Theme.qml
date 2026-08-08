@@ -17,7 +17,7 @@ QtObject {
     readonly property int areaLeftRightPadding: 10
     readonly property int componentSpacing: 5
     readonly property int componentPadding: 10
-    readonly property int iconSpacing: 5
+    readonly property int iconSpacing: 2
 
     // Radius
     readonly property int barRadius: 7
@@ -41,11 +41,13 @@ QtObject {
     readonly property color leftAreaBackground: "#313244"
     readonly property color centerAreaBackground: "#313244"
     readonly property color rightAreaBackground: "#313244"
-    readonly property color workspaceBackground: "transparent"
+    readonly property color workspaceBackground: "#000000"
     readonly property color systrayBackground: "#000000"
     readonly property color systrayHoverBackground: "#8839ef"
     readonly property color mediaBackground: "#000000"
     readonly property color equalizerColor: "#34DB70"
+    readonly property color audioBackground: "#000000"
+    readonly property color micBackground: "#000000"
 
     // Icons
     readonly property string backlightFullIcon: "󰃠"
