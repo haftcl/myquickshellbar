@@ -81,12 +81,12 @@ BarComponent {
         BarIcon {
             text: root.statusIcon
             font.pixelSize: App.Theme.fontSize
-            visible: !root.isSpotify()
+            visible: !root.isSpotify() || !root.isPlaying()
         }
 
         Equalizer {
             playing: root.isPlaying()
-            visible: root.isSpotify()
+            visible: root.isSpotify() && root.isPlaying()
         }
     }
 }
