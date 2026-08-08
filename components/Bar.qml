@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import ".." as App
 
+// qmllint disable uncreatable-type
 PanelWindow {
     id: bar
     anchors {
@@ -84,7 +85,6 @@ PanelWindow {
 
             IdleInhibit {
                 area: rightArea
-                anchorPanel: bar
             }
 
             Backlight {
