@@ -5,7 +5,7 @@ import QtQuick
 QtObject {
     // Dimentions
     readonly property int barHeight: 30
-    readonly property int mediaMaxWidth: 285
+    readonly property int mediaMaxWidth: 300
     readonly property int iconWidth: 25
 
     // Spacing
@@ -30,8 +30,8 @@ QtObject {
     readonly property string fontFamily: "Ubuntu Nerd Font Propo"
     readonly property int fontSize: 12
     readonly property int iconSize: 15
-    readonly property color fontColor: "#cdd6f4"
-    readonly property color activeFontColor: "#1e1e2e"
+    readonly property color fontColor: "#cad3f5"
+    readonly property color activeFontColor: "#181926"
 
     // Colors
     readonly property color background: "transparent"
