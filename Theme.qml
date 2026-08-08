@@ -17,7 +17,7 @@ QtObject {
     readonly property int areaLeftRightPadding: 10
     readonly property int componentSpacing: 5
     readonly property int componentPadding: 10
-    readonly property int iconSpacing: 2
+    readonly property int iconSpacing: 3
 
     // Radius
     readonly property int barRadius: 7
