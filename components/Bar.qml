@@ -26,6 +26,7 @@ PanelWindow {
     }
 
     Rectangle {
+        property ShellScreen currentScreen: bar.screen
         visible: true
         anchors.fill: parent
         implicitWidth: parent.width
@@ -36,6 +37,7 @@ PanelWindow {
         border.color: App.Theme.borderColor
 
         Area {
+            panel: bar
             id: leftArea
             color: App.Theme.leftAreaBackground
             anchors {
@@ -44,7 +46,6 @@ PanelWindow {
             }
 
             Workspaces {
-                targetScreen: bar.screen
                 area: leftArea
             }
 
@@ -54,6 +55,7 @@ PanelWindow {
         }
 
         Area {
+            panel: bar
             id: centerArea
             color: App.Theme.centerAreaBackground
             anchors.centerIn: parent
@@ -64,6 +66,7 @@ PanelWindow {
         }
 
         Area {
+            panel: bar
             id: rightArea
             color: App.Theme.rightAreaBackground
             anchors {

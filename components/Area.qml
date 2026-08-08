@@ -1,3 +1,4 @@
+import Quickshell
 import QtQuick.Layouts
 import QtQuick
 import ".." as App
@@ -12,6 +13,8 @@ Rectangle {
     // Making this default aliases any child items declared inside Area { ... }
     // directly into internalColumn.data
     default property alias content: row.data
+
+    required property PanelWindow panel
 
     RowLayout {
         id: row

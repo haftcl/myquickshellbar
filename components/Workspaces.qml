@@ -6,10 +6,9 @@ import ".." as App
 
 BarComponent {
     id: root
-
-    required property ShellScreen targetScreen
-
     implicitWidth: layout.implicitWidth + App.Theme.iconSpacing
+
+    property ShellScreen targetScreen: area.panel.screen
 
     RowLayout {
         id: layout
@@ -19,7 +18,7 @@ BarComponent {
         Repeater {
             // Filter workspaces for this screen
             model: Hyprland.workspaces.values.filter(ws => {
-                const isCorrectMonitor = ws.monitor && ws.monitor.name === root.targetScreen.name;
+                const isCorrectMonitor = ws.monitor && ws.monitor.name === root.targetScreen?.name;
                 const isNormalWorkspace = !ws.name.startsWith("special:");
 
                 return isCorrectMonitor && isNormalWorkspace;

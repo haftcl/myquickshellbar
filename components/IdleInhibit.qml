@@ -4,7 +4,7 @@ import Quickshell.Wayland
 import ".." as App
 
 BarComponent {
-    required property PanelWindow anchorPanel
+    property PanelWindow anchorPanel: area.panel
 
     id: root
     implicitWidth: App.Theme.iconWidth

@@ -6,6 +6,7 @@ import ".." as App
 BarComponent {
     id: root
     implicitWidth: layout.implicitWidth + App.Theme.barPadding
+    visible: area.panel.screen.name === "eDP-1"
 
     RowLayout {
         id: layout
@@ -18,7 +19,7 @@ BarComponent {
                     return App.Theme.backlightFullIcon;
                 }
 
-                if (Services.BacklightService.brightnessPercent > 33) {
+                if (Services.BacklightService.brightnessPercent > 30) {
                     return App.Theme.backlightMediumIcon;
                 }
 
@@ -43,5 +44,9 @@ BarComponent {
             else
                 Services.BacklightService.brightnessDown();
         }
+    }
+
+    Component.onCompleted: {
+        console.log(root.area.panel.screen.name)
     }
 }
