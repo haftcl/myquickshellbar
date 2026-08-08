@@ -45,8 +45,4 @@ BarComponent {
                 Services.BacklightService.brightnessDown();
         }
     }
-
-    Component.onCompleted: {
-        console.log(root.area.panel.screen.name)
-    }
 }
