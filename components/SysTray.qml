@@ -44,7 +44,7 @@ BarComponent {
                     id: menuAnchor
                     menu: item.modelData.menu
                     anchor.item: item
-                    anchor.margins.top: App.Theme.barHeight + App.Theme.barMarginBottom
+                    anchor.margins.top: App.Theme.barHeight
                 }
 
                 MouseArea {
