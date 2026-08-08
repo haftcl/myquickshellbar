@@ -5,7 +5,7 @@ import ".." as App
 
 BarComponent {
     id: root
-    implicitWidth: layout.implicitWidth + App.Theme.barPadding
+    implicitWidth: calculateWidth(layout.implicitWidth)
 
     function volumeIcon() {
         var volume = Services.AudioService.outputVolume()

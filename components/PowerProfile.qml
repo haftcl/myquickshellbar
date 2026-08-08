@@ -5,6 +5,8 @@ import ".." as App
 BarComponent {
     id: root
     implicitWidth: App.Theme.iconWidth
+    radius: App.Theme.areaRadius
+    color: mouseArea.containsMouse ? App.Theme.hoverBackground : "transparent"
 
     BarIcon {
         id: icon

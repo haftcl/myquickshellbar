@@ -6,5 +6,13 @@ Rectangle {
 
     color: "transparent"
     radius: App.Theme.areaRadius
-    implicitHeight: App.Theme.barHeight - (App.Theme.barPadding * 2)
+    implicitHeight: calculateHeight(App.Theme.barHeight)
+
+    function calculateHeight(height) {
+        return height - (App.Theme.barPadding * 2);
+    }
+
+    function calculateWidth(width) {
+        return width + (App.Theme.componentPadding * 2);
+    }
 }

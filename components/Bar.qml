@@ -38,8 +38,8 @@ PanelWindow {
         border.color: App.Theme.borderColor
 
         Area {
-            panel: bar
             id: leftArea
+            panel: bar
             color: App.Theme.leftAreaBackground
             anchors {
                 left: parent.left
@@ -56,8 +56,8 @@ PanelWindow {
         }
 
         Area {
-            panel: bar
             id: centerArea
+            panel: bar
             color: App.Theme.centerAreaBackground
             anchors.centerIn: parent
 
@@ -67,8 +67,8 @@ PanelWindow {
         }
 
         Area {
-            panel: bar
             id: rightArea
+            panel: bar
             color: App.Theme.rightAreaBackground
             anchors {
                 right: parent.right

@@ -5,7 +5,7 @@ import ".." as App
 
 BarComponent {
     id: root
-    implicitWidth: layout.implicitWidth + App.Theme.barPadding
+    implicitWidth: calculateWidth(layout.implicitWidth)
     visible: area.panel.screen.name === "eDP-1"
 
     RowLayout {

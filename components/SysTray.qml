@@ -8,7 +8,7 @@ BarComponent {
     id: root
 
     color: App.Theme.systrayBackground
-    implicitWidth: layout.implicitWidth + (App.Theme.componentPadding * 2)
+    implicitWidth: calculateWidth(layout.implicitWidth)
 
     RowLayout {
         id: layout
@@ -25,15 +25,15 @@ BarComponent {
                 required property SystemTrayItem modelData
 
                 width: App.Theme.iconWidth
-                implicitHeight: App.Theme.barHeight - App.Theme.barPadding
+                implicitHeight: root.calculateHeight(root.height)
                 radius: App.Theme.areaRadius
-                color: mouseArea.containsMouse ? App.Theme.hoverBackground : "transparent"
+                color: mouseArea.containsMouse ? App.Theme.systrayHoverBackground : "transparent"
 
                 // Tray Icon
                 Image {
                     anchors.centerIn: parent
-                    width: 22
-                    height: 22
+                    width: root.calculateHeight(item.height)
+                    height:  root.calculateHeight(item.height)
 
                     source: parent.modelData.icon
                     smooth: true
@@ -44,7 +44,7 @@ BarComponent {
                     id: menuAnchor
                     menu: item.modelData.menu
                     anchor.item: item
-                    anchor.margins.top: App.Theme.barHeight + 5
+                    anchor.margins.top: App.Theme.barHeight + App.Theme.barMarginBottom
                 }
 
                 MouseArea {

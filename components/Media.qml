@@ -7,9 +7,7 @@ import ".." as App
 
 BarComponent {
     id: root
-
-    implicitWidth: layout.implicitWidth + (App.Theme.componentPadding * 2)
-
+    implicitWidth: calculateWidth(layout.implicitWidth)
     visible: isVisible
     color: App.Theme.mediaBackground
 
@@ -87,11 +85,7 @@ BarComponent {
         Equalizer {
             playing: root.isPlaying()
             visible: root.isSpotify() && root.isPlaying()
-            barColor: "#34DB70"
+            barColor: App.Theme.equalizerColor
         }
-    }
-
-    Component.onCompleted: {
-        console.log(player)
     }
 }

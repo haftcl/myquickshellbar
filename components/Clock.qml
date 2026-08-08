@@ -4,7 +4,7 @@ import ".." as App
 
 BarComponent {
     id: root
-    implicitWidth: layout.implicitWidth + (App.Theme.componentPadding * 2)
+    implicitWidth: calculateWidth(layout.implicitWidth)
 
     property string clockText: ""
 

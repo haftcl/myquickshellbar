@@ -6,7 +6,7 @@ import ".." as App
 
 BarComponent {
     id: root
-    implicitWidth: layout.implicitWidth + App.Theme.iconSpacing
+    implicitWidth: calculateWidth(layout.implicitWidth)
 
     property ShellScreen targetScreen: area.panel.screen
 
@@ -28,8 +28,8 @@ BarComponent {
                 required property HyprlandWorkspace modelData
                 property bool isActive: modelData.active
 
-                implicitWidth: App.Theme.iconWidth
-                implicitHeight: App.Theme.barHeight - App.Theme.barPadding
+                implicitWidth: root.calculateHeight(root.implicitHeight)
+                implicitHeight: root.calculateHeight(root.implicitHeight)
                 radius: App.Theme.areaRadius
 
                 // Individual button styling
@@ -47,7 +47,7 @@ BarComponent {
                 BarText {
                     anchors.centerIn: parent
                     text: App.Theme.workspacesIconMap[parent.modelData.name] ?? parent.modelData.name
-                    color: parent.isActive || mouseArea.containsMouse ? App.Theme.activeFontColor : App.Theme.fontColor
+                    color: parent.isActive ? App.Theme.activeFontColor : App.Theme.fontColor
                     font.pixelSize: App.Theme.workspacesIconMap[parent.modelData.name] ? App.Theme.iconSize : App.Theme.fontSize
                     font.bold: App.Theme.workspacesIconMap[parent.modelData.name] ? false : true
                 }
