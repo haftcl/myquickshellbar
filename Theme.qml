@@ -3,6 +3,15 @@ pragma Singleton
 import QtQuick
 
 QtObject {
+    // Color Definitions
+    readonly property color white: "#cad3f5"
+    readonly property color black: "#000000"
+    readonly property color darkGray: "#24273a"
+    readonly property color purple: "#8839ef"
+    readonly property color lightBlue: "#8aadf4"
+    readonly property color spotifyGreen: "#34db70"
+    readonly property color transparent: "transparent"
+
     // Dimentions
     readonly property int barHeight: 30
     readonly property int mediaMaxWidth: 300
@@ -10,10 +19,10 @@ QtObject {
 
     // Spacing
     readonly property int barPadding: 2
-    readonly property int barMarginTop: 3
+    readonly property int barMarginTop: 2
     readonly property int barMarginBottom: 5
-    readonly property int barMarginLeft: 3
-    readonly property int barMarginRight: 3
+    readonly property int barMarginLeft: 2
+    readonly property int barMarginRight: 2
     readonly property int areaLeftRightPadding: 10
     readonly property int componentSpacing: 5
     readonly property int componentPadding: 10
@@ -31,26 +40,26 @@ QtObject {
     readonly property string fontFamily: "Ubuntu Nerd Font Propo"
     readonly property int fontSize: 12
     readonly property int iconSize: 15
-    readonly property color fontColor: "#cad3f5"
-    readonly property color activeFontColor: "#181926"
+    readonly property color fontColor: white
+    readonly property color activeFontColor: darkGray
 
-    // Colors
-    readonly property color background: "#313244"
-    readonly property color borderColor: "transparent"
-    readonly property color accentBackground: "#89b4fa"
-    readonly property color hoverBackground: "#8839ef"
-    readonly property color leftAreaBackground: "#313244"
-    readonly property color centerAreaBackground: "#313244"
-    readonly property color rightAreaBackground: "#313244"
-    readonly property color workspaceBackground: "#000000"
-    readonly property color systrayBackground: "#000000"
-    readonly property color systrayHoverBackground: "#8839ef"
-    readonly property color mediaBackground: "#000000"
-    readonly property color equalizerColor: "#34DB70"
-    readonly property color audioBackground: "#000000"
-    readonly property color micBackground: "#000000"
-    readonly property color iconBackground: "#000000"
-    readonly property color clockBackground: "transparent"
+    // Component colors
+    readonly property color background: darkGray
+    readonly property color borderColor: transparent
+    readonly property color accentBackground: lightBlue
+    readonly property color hoverBackground: purple
+    readonly property color leftAreaBackground: darkGray
+    readonly property color centerAreaBackground: darkGray
+    readonly property color rightAreaBackground: darkGray
+    readonly property color workspaceBackground: black
+    readonly property color systrayBackground: black
+    readonly property color systrayHoverBackground: purple
+    readonly property color mediaBackground: black
+    readonly property color equalizerColor: spotifyGreen
+    readonly property color audioBackground: black
+    readonly property color micBackground: black
+    readonly property color iconBackground: black
+    readonly property color clockBackground: black
 
     // Icons
     readonly property string backlightFullIcon: "󰃠"

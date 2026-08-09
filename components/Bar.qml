@@ -10,7 +10,7 @@ PanelWindow {
         left: true
         right: true
     }
-    visible: true
+    visible: App.State.barVisible
 
     // Require the screen property to be provided by shell.qml
     required property ShellScreen modelData

@@ -7,10 +7,14 @@ import "." as App
 
 ShellRoot {
     IpcHandler {
-        target: "idle"
+        target: "bar"
 
-        function toggle(): void {
+        function toggleInhibit(): void {
             App.State.idleInhibited = !App.State.idleInhibited;
+        }
+
+        function toggleBar(): void {
+            App.State.barVisible = !App.State.barVisible;
         }
     }
 
