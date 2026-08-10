@@ -91,6 +91,10 @@ PanelWindow {
                 area: rightArea
             }
 
+            Battery {
+                area: rightArea
+            }
+
             Mic {
                 area: rightArea
             }

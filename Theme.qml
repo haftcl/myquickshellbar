@@ -60,6 +60,7 @@ QtObject {
     readonly property color micBackground: black
     readonly property color iconBackground: black
     readonly property color clockBackground: black
+    readonly property color batteryBackground: black
 
     // Icons
     readonly property string backlightFullIcon: "󰃠"
