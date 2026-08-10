@@ -52,7 +52,7 @@ BarComponent {
         if (player == null)
             return false;
 
-        if (player.trackTitle == null)
+        if (player.trackTitle == null || player.trackTitle == "")
             return false;
 
         return true;
