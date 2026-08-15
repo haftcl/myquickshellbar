@@ -91,6 +91,13 @@ PanelWindow {
                 area: rightArea
             }
 
+            SystemMonitor {
+                area: rightArea
+                showCpu: true
+                showGpu: true
+                showCpuTemp: true
+            }
+
             Battery {
                 area: rightArea
             }

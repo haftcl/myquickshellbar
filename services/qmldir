@@ -2,3 +2,4 @@ singleton DndService DndService.qml
 singleton AudioService AudioService.qml
 singleton PowerProfileService PowerProfileService.qml
 singleton BacklightService BacklightService.qml
+singleton SystemMonitorService SystemMonitorService.qml

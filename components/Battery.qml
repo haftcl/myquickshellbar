@@ -10,16 +10,7 @@ BarComponent {
     implicitWidth: calculateWidth(layout.implicitWidth)
     color: App.Theme.batteryBackground
 
-    property var battery: {
-        for (const device of UPower.devices.values) {
-            if (device.isLaptopBattery) {
-                battery = device;
-                break;
-            }
-        }
-
-        return null
-    }
+    property var battery: UPower.displayDevice
 
     visible: battery != null
 

@@ -10,6 +10,7 @@ QtObject {
     readonly property color purple: "#8839ef"
     readonly property color lightBlue: "#8aadf4"
     readonly property color spotifyGreen: "#34db70"
+    readonly property color red: "#ed8796"
     readonly property color transparent: "transparent"
 
     // Dimentions
@@ -61,6 +62,12 @@ QtObject {
     readonly property color iconBackground: black
     readonly property color clockBackground: black
     readonly property color batteryBackground: black
+    readonly property color backlightBackground: black
+    readonly property color systemMonitorBackground: black
+    readonly property color cpuTempWarningColor: red
+
+    // Thresholds
+    readonly property int cpuTempWarningThreshold: 80
 
     // Icons
     readonly property string backlightFullIcon: "󰃠"
@@ -79,6 +86,10 @@ QtObject {
     readonly property string pauseIcon: ""
     readonly property string stopIcon: ""
     readonly property string clockIcon: ""
+    readonly property string cpuIcon: "󰻠"
+    readonly property string gpuIcon: "󰢮"
+    readonly property string cpuTempIcon: "󰔐"
+    readonly property string ramIcon: "󰍛"
     readonly property string dndOnIcon: ""
     readonly property string dndOffIcon: "󰵙"
     readonly property string idleInhibitorOnIcon: "󰒳"
