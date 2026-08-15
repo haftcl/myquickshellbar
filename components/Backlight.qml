@@ -7,6 +7,7 @@ BarComponent {
     id: root
     implicitWidth: calculateWidth(layout.implicitWidth)
     visible: area.panel.screen.name === "eDP-1"
+    color: App.Theme.backlightBackground
 
     RowLayout {
         id: layout
