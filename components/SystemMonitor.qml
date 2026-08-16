@@ -1,3 +1,5 @@
+pragma ComponentBehavior: Bound
+
 import QtQuick.Layouts
 import QtQuick
 import "../services" as Services
@@ -7,31 +9,11 @@ BarComponent {
     id: root
     implicitWidth: calculateWidth(layout.implicitWidth)
     color: App.Theme.systemMonitorBackground
-    visible: showCpu || showCpuTemp || showGpu || showRam
+    visible: metrics.length > 0
 
-    property bool showCpu: false
-    property bool showCpuTemp: false
-    property bool showGpu: false
-    property bool showRam: false
-
-    // Controls both which metrics are shown and the order they appear in.
+    // Controls both which metrics are shown and the metrics they appear in.
     // Valid keys: "cpu", "cpuTemp", "gpu", "ram"
-    property var order: ["cpuTemp", "cpu", "gpu", "ram"]
-
-    function metricVisible(key) {
-        switch (key) {
-        case "cpu":
-            return root.showCpu;
-        case "cpuTemp":
-            return root.showCpuTemp;
-        case "gpu":
-            return root.showGpu;
-        case "ram":
-            return root.showRam;
-        default:
-            return false;
-        }
-    }
+    property var metrics: ["cpuTemp", "cpu", "gpu", "ram"]
 
     function metricIcon(key) {
         switch (key) {
@@ -77,14 +59,13 @@ BarComponent {
         anchors.centerIn: parent
 
         Repeater {
-            model: root.order
+            model: root.metrics
 
             RowLayout {
                 id: metric
                 required property string modelData
 
                 spacing: App.Theme.iconSpacing
-                visible: root.metricVisible(modelData)
 
                 BarIcon {
                     text: root.metricIcon(metric.modelData)

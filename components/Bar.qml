@@ -93,9 +93,7 @@ PanelWindow {
 
             SystemMonitor {
                 area: rightArea
-                showCpu: true
-                showGpu: true
-                showCpuTemp: true
+                metrics: ["cpuTemp", "cpu", "gpu"]
             }
 
             Battery {
