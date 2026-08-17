@@ -5,5 +5,5 @@ import QtQuick
 QtObject {
     property bool idleInhibited: false
     property bool barVisible: true
-    property string mainWindow: "eDP-1"
+    readonly property string laptopScreen: "eDP-1"
 }

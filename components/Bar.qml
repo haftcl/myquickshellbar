@@ -90,12 +90,12 @@ PanelWindow {
 
             Backlight {
                 area: rightArea
-                visible: bar_container.currentScreen.name === App.State.mainWindow
+                visible: bar_container.currentScreen.name === App.State.laptopScreen
             }
 
             SystemMonitor {
                 area: rightArea
-                metrics: bar_container.currentScreen.name === App.State.mainWindow ? ["cpuTemp", "cpu", "gpu"] : ["cpuTemp", "cpu", "ram", "gpu",]
+                metrics: bar_container.currentScreen.name === App.State.laptopScreen ? ["cpuTemp", "cpu", "gpu"] : ["cpuTemp", "cpu", "ram", "gpu",]
             }
 
             Battery {
