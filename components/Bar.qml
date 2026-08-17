@@ -27,6 +27,7 @@ PanelWindow {
     }
 
     Rectangle {
+        id: bar_container
         property ShellScreen currentScreen: bar.screen
         visible: true
         anchors.fill: parent
@@ -89,11 +90,12 @@ PanelWindow {
 
             Backlight {
                 area: rightArea
+                visible: bar_container.currentScreen.name === App.State.mainWindow
             }
 
             SystemMonitor {
                 area: rightArea
-                metrics: ["cpuTemp", "cpu", "gpu"]
+                metrics: bar_container.currentScreen.name === App.State.mainWindow ? ["cpuTemp", "cpu", "gpu"] : ["cpuTemp", "cpu", "ram", "gpu",]
             }
 
             Battery {
